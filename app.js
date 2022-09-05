@@ -13,17 +13,14 @@ const app = express();
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-var whitelist = [
-  'https://js-notes-clnt.herokuapp.com/',
-];
-var corsOptions = {
-  origin: function(origin, callback){
-      var originIsWhitelisted = whitelist.indexOf(origin) !== -1;
-      callback(null, originIsWhitelisted);
-  },
-  credentials: true
-};
-app.use(cors(corsOptions));
+
+app.options('*', cors())
+
+if (req.method === "OPTIONS") {
+  res.header('Access-Control-Allow-Origin', req.headers.origin);
+} else {
+  res.header('Access-Control-Allow-Origin', '*');
+}
 
 app.use('/users', usersRouter);
 app.use('/notes', notesRouter);
