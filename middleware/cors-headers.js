@@ -2,7 +2,7 @@ module.exports = (req, res, next) => {
   
   response.set({
     'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'DELETE,GET,PATCH,POST,PUT',
+    'Access-Control-Allow-Methods': 'OPTIONS,DELETE,GET,PATCH,POST,PUT',
     'Access-Control-Allow-Headers': 'Content-Type,Authorization'
   });
 
