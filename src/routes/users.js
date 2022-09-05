@@ -7,6 +7,15 @@ const WithAuth = require('../middlewares/auth');
 const router = express.Router();
 const secret = process.env.JWT_TOKEN;
 
+router.get('/', function(req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); 
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); 
+  res.setHeader('Access-Control-Allow-Credentials', true); 
+
+  res.send('cors problem fixed:)');
+});
+
 router.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
   const user = new User({ name, email, password });
