@@ -6,7 +6,7 @@ const cors = require('cors');
 // const corsHeaders = require('./middleware/cors-headers');
 
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: 'https://js-notes-clnt.herokuapp.com/register',
   optionsSuccessStatus: 200
 }
 
