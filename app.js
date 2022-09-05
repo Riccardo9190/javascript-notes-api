@@ -1,35 +1,24 @@
 require('./config/database');
 
-const express = require('express');
-const logger = require('morgan');
-// const cors = require('cors');
-// const corsHeaders = require('./middleware/cors-headers');
-
-// const corsOptions = {
-//   origin: 'https://js-notes-clnt.herokuapp.com',
-//   optionsSuccessStatus: 200
-// }
-
-const usersRouter = require('./src/routes/users');
-const notesRouter = require('./src/routes/notes');
-
-const app = express();
-
+var cors = require('cors');
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*")
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested, Content-Type, Accept Authorization"
-  )
-  if (req.method === "OPTIONS") {
-    res.header(
-      "Access-Control-Allow-Methods",
-      "POST, PUT, PATCH, GET, DELETE"
-    )
-    return res.status(200).json({})
-  }
-  next()
-})
+	//Qual site tem permissão de realizar a conexão, no exemplo abaixo está o "*" indicando que qualquer site pode fazer a conexão
+    res.header("Access-Control-Allow-Origin", "*");
+	//Quais são os métodos que a conexão pode realizar na API
+    res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE');
+    app.use(cors());
+    next();
+});
+
+var express = require('express');
+var logger = require('morgan');
+
+var usersRouter = require('./src/routes/users');
+var notesRouter = require('./src/routes/notes');
+
+var app = express();
+
+
 
 app.use(logger('dev'));
 app.use(express.json());
