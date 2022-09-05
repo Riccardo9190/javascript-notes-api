@@ -10,7 +10,7 @@ const notesRouter = require('./src/routes/notes');
 const app = express();
 
 app.use((req, res, next) => {
-  res.header("Acess-Control-Allow-Origin", "*");
+  res.header("Acess-Control-Allow-Origin", "https://js-notes-clnt.herokuapp.com/login");
   app.options('*', cors()) 
   next();
 })
