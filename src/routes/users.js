@@ -3,10 +3,13 @@ const User = require('../models/user');
 const jwt = require('jsonwebtoken')
 const express = require('express');
 const WithAuth = require('../middlewares/auth');
-const app = express();
+const cors = require('cors');
+const app = express()
 
 const router = express.Router();
 const secret = process.env.JWT_TOKEN;
+
+app.options('*', cors())
 
 router.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
