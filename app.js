@@ -1,13 +1,13 @@
 require('./config/database');
 
-var express = require('express');
-var logger = require('morgan');
-var cors = require('cors');
+const express = require('express');
+const logger = require('morgan');
+const cors = require('cors');
 
-var usersRouter = require('./src/routes/users');
-var notesRouter = require('./src/routes/notes');
+const usersRouter = require('./src/routes/users');
+const notesRouter = require('./src/routes/notes');
 
-var app = express();
+const app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
