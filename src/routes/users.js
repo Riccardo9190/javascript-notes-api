@@ -9,7 +9,12 @@ const app = express()
 const router = express.Router();
 const secret = process.env.JWT_TOKEN;
 
-app.options('*', cors())
+const corsOptions = {
+  origin: 'https://js-notes-clnt.herokuapp.com/login',
+  optionsSuccessStatus: 200
+}
+
+app.options('*', cors(corsOptions))
 
 router.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
