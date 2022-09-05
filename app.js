@@ -14,13 +14,17 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.options('*', cors())
+app.use(function (req, res, next)  {
+  app.options('*', cors())
+  if (req.method === "OPTIONS") {
+    res.header('Access-Control-Allow-Origin', req.headers.origin);
+  } else {
+    res.header('Access-Control-Allow-Origin', '*');
+  }
+})
 
-if (req.method === "OPTIONS") {
-  res.header('Access-Control-Allow-Origin', req.headers.origin);
-} else {
-  res.header('Access-Control-Allow-Origin', '*');
-}
+
+
 
 app.use('/users', usersRouter);
 app.use('/notes', notesRouter);
