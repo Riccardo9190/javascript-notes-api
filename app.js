@@ -11,6 +11,7 @@ const app = express();
 const corsOptions = {
     "origin": 'https://js-notes-clnt.herokuapp.com/login',
     "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+    "preflightContinue": true,
     "optionsSuccessStatus": 200
 }
 
