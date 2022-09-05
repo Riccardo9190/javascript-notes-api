@@ -10,8 +10,9 @@ const router = express.Router();
 const secret = process.env.JWT_TOKEN;
 
 const corsOptions = {
-  origin: 'https://js-notes-clnt.herokuapp.com/login',
-  optionsSuccessStatus: 200
+  "origin": "*",
+  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+  "optionsSuccessStatus": 200
 }
 
 app.options('*', cors(corsOptions))
