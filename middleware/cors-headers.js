@@ -1,14 +1,12 @@
-module.exports = (request, response, next) => {
-  // http://expressjs.com/en/4x/api.html#res.set
-  response.set({
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'DELETE,GET,PATCH,POST,PUT',
-      'Access-Control-Allow-Headers': 'Content-Type,Authorization'
-  });
+module.exports = (req, res, next) => {
+  
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
 
   // intercept OPTIONS method
-  if(request.method === 'OPTIONS') {
-      response.send(200);
+  if(req.method === 'OPTIONS') {
+      res.send(200);
   } else {
       next();
   }
