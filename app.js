@@ -3,7 +3,7 @@ require('./config/database');
 const express = require('express');
 const logger = require('morgan');
 const cors = require('cors');
-
+const corsConfig = require('./cors_config')
 
 const usersRouter = require('./src/routes/users');
 const notesRouter = require('./src/routes/notes');
@@ -14,18 +14,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use(function (req, res, next)  {
-  app.options('*', cors())
-  if (req.method === "OPTIONS") {
-    res.header('Access-Control-Allow-Origin', req.headers.origin);
-  } else {
-    res.header('Access-Control-Allow-Origin', '*');
-  }
-
-  return next()
-})
-
-
+app.use(cors(corsConfig))
 
 
 app.use('/users', usersRouter);
