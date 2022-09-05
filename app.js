@@ -21,6 +21,8 @@ app.use(function (req, res, next)  {
   } else {
     res.header('Access-Control-Allow-Origin', '*');
   }
+
+  return next()
 })
 
 
