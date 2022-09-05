@@ -12,7 +12,24 @@ const app = express();
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors())
+
+app.use((req, res, next) => {
+
+  res.header("Access-Control-Allow-Origin", "*");
+
+  res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE,OPTIONS');
+
+  res.header("Access-Control-Allow-Headers", "Content-type,Accept,X-Custom-Header");
+
+  if (req.method === "OPTIONS") {
+    return res.status(200).end();
+  }
+
+
+  app.use(cors());
+
+  next();
+});
 
 app.use('/users', usersRouter);
 app.use('/notes', notesRouter);
