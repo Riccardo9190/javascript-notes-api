@@ -1,8 +1,10 @@
 module.exports = (req, res, next) => {
   
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  response.set({
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'DELETE,GET,PATCH,POST,PUT',
+    'Access-Control-Allow-Headers': 'Content-Type,Authorization'
+  });
 
   // intercept OPTIONS method
   if(req.method === 'OPTIONS') {
