@@ -2,7 +2,7 @@ require('./config/database');
 
 const express = require('express');
 const logger = require('morgan');
-// const cors = require('cors');
+const cors = require('cors');
 const corsHeaders = require('./middleware/cors-headers');
 
 const usersRouter = require('./src/routes/users');
@@ -14,7 +14,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use(corsHeaders)
+app.use(cors(corsHeaders))
 
 app.use('/users', usersRouter);
 app.use('/notes', notesRouter);
