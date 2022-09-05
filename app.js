@@ -9,11 +9,10 @@ const notesRouter = require('./src/routes/notes');
 
 const app = express();
 
-app.use(app.options('*',(cors())))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
+app.use(cors())
 
 app.use('/users', usersRouter);
 app.use('/notes', notesRouter);
