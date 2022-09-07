@@ -7,3 +7,4 @@ mongoose.Promise = global.Promise;
 mongoose.connect(MONGO_URL)
   .then(() => console.log('Successful connection with MongoDB'))
   .catch((error) => console.log(error))
+  
