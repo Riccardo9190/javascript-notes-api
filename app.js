@@ -1,21 +1,23 @@
 require('./config/database');
 
-const express = require('express');
-const app = express();
+var express = require('express');
+var path = require('path');
+var logger = require('morgan');
+var cors = require('cors');
 
-const logger = require('morgan');
+var usersRouter = require('./src/routes/users');
+var notesRouter = require('./src/routes/notes');
+
+var app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
-const cors = require('cors');
-app.use(cors)
-
-const usersRouter = require('./src/routes/users');
-const notesRouter = require('./src/routes/notes');
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors());
 
 app.use('/users', usersRouter);
 app.use('/notes', notesRouter);
 
 module.exports = app;
+
