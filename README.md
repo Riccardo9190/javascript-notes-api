@@ -27,7 +27,7 @@ API for JavaScript Notes.
 
 ㅤㅤ1)ㅤ```echo "JWT_TOKEN=aleatorystring" > .env```
 
-ㅤㅤExample: ```echo "JWT_TOKEN=fwa98d739hr391r2j0921j029h0 > .env```
+ㅤㅤExample: ```echo "JWT_TOKEN=fwa98d739hr391r2j0921j029h0" > .env```
 <p>
 ㅤㅤ<em><strong>Note: After save this environment variable, you can't change it again. If you do that, JWT tokens will not work anymore.</strong></em>
 </p>
