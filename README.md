@@ -6,6 +6,8 @@ API for JavaScript Notes.
 
 - Node.js
 - Express
+- MongoDB
+- Mongoose
 - JWT
 - Bcrypt
 
