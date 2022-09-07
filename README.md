@@ -37,7 +37,7 @@ API for JavaScript Notes.
 ㅤㅤ
 2)ㅤ```echo "MONGO_URL=mongodb://localhost/nameofdatabase" > .env```
 
-ㅤㅤExample: ```echo "MONGO_URL=mongodb://localhost/todolistdatabase" > .env```
+ㅤㅤExample: ```echo "MONGO_URL=mongodb://localhost/jsnotesapi" > .env```
 
 <br>
 
