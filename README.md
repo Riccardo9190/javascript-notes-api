@@ -15,7 +15,7 @@ API for JavaScript Notes.
 
 - Clone this repository with ```git clone https://github.com/Riccardo9190/javascript-notes-api.git```
 
-- Access the API folder with ```cd javascript_notes_api```
+- Access the API folder with ```cd javascript-notes-api```
 
 - Install all dependencies with ```npm install```
 
