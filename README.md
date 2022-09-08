@@ -1,4 +1,4 @@
-# JavaScript Notes API
+# Javascript Notes API
 
 API for JavaScript Notes.
 
