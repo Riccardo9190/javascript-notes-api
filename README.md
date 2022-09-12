@@ -45,5 +45,3 @@ Once you have your MongoDB service running you can do the following steps:
 <br>
 
 - Run the API with  ```npm run dev```
-
-
