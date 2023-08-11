@@ -22,26 +22,16 @@ Once you have your MongoDB service running you can do the following steps:
 
 - Install all dependencies with ```npm install```
 
-- Create a file named '.env' on the root of the project with ```touch .env```
-
 - Set the environment variables for API with: 
 
-<br>
+```shell
+echo "JWT_TOKEN=your_aleatory_string_here" > .env
+```
+<em><strong>Note: After saving this environment variable, you can't change it again. If you do so, JWT tokens will no longer work.</strong></em>
 
-ㅤㅤ1)ㅤ```echo "JWT_TOKEN=aleatorystring" >> .env```
+```shell
+echo "MONGO_URL=mongodb://localhost/your_databasename" > .env
+```
 
-ㅤㅤExample: ```echo "JWT_TOKEN=fwa98d739hr391r2j0921j029h0" >> .env```
-<p>
-ㅤㅤ<em><strong>Note: After save this environment variable, you can't change it again. If you do that, JWT tokens will not work anymore.</strong></em>
-</p>
-
-<br>
-
-ㅤㅤ
-2)ㅤ```echo "MONGO_URL=mongodb://localhost/nameofdatabase" >> .env```
-
-ㅤㅤExample: ```echo "MONGO_URL=mongodb://localhost/jsnotesapi" >> .env```
-
-<br>
 
 - Run the API with  ```npm run dev```
