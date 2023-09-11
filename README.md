@@ -30,7 +30,7 @@ echo "JWT_TOKEN=your_aleatory_string_here" > .env
 <em><strong>Note: After saving this environment variable, you can't change it again. If you do so, JWT tokens will no longer work.</strong></em>
 
 ```shell
-echo "MONGO_URL=mongodb://localhost/your_databasename" > .env
+echo "MONGO_URL=mongodb://localhost/your_databasename" >> .env
 ```
 
 
