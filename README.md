@@ -1,13 +1,12 @@
 # Javascript Notes API
 
-API for JavaScript Notes.
+API for [Javascript Notes](https://github.com/Riccardo9190/javascript-notes-client).
 
 ### Technologies Used:
 
 - Node.js
 - Express
 - MongoDB
-- Mongoose
 - JWT
 - Bcrypt
 
